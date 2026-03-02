@@ -1,0 +1,47 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "m0_desktop coreclr",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/m0_desktop/bin/Debug/net9.0-windows/m0_desktop.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": "m0_console coreclr",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/m0_console/bin/Debug/net9.0/m0_console.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/m0_console",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": "C#: m0_desktop dotnet",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/m0_desktop/m0_desktop.csproj"
+        },
+        {
+            "name": "C#: m0_console dotnet",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/m0_console/m0_console.csproj"
+        },
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach"
+        }
+    ]
+}

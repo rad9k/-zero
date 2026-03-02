@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+    <OutputType>WinExe</OutputType>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="UIWpf\Visualisers\Diagram\**" />
+    <EmbeddedResource Remove="UIWpf\Visualisers\Diagram\**" />
+    <None Remove="UIWpf\Visualisers\Diagram\**" />
+    <Page Remove="UIWpf\Visualisers\Diagram\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="iOSStyleToggleButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <PackageReference Include="AvalonEdit" Version="6.3.1.120" />
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.7.25104.5739" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ZeroCodeHighlighting.xshd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\m0\m0.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Untitled1.png" />
+    <Resource Include="UIWpf\Controls\AnimatedHideArea.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZeroTypes\UX\UX.txt" />
+    <Resource Include="_RESOURCES\basic\delete.png" />
+    <Resource Include="_RESOURCES\basic\details.png" />
+  </ItemGroup>
+</Project>
