@@ -1,0 +1,21 @@
+System\FormalTextLanguage\ZeroCode_VertexAndManyLines
+"webserver"
+	import @System\Lib\Net direct meta
+	import @System\Lib\Sys direct meta
+	import @System\Lib\StdUI direct meta
+	
+	variable "map" @VertexType
+	variable "server" @HttpServer
+	
+	function "handler_http"(@String "url")
+		return @@Autostart\web\MDServe\MDServeHandler[Start\:http, url]
+		
+	map +< create http mapping "map"{
+		mapping @@HttpActionEnum\GET "/diagrams/*" @@Start:\diagrams
+		mapping @@HttpActionEnum\GET "/*" @@handler_http		
+	}
+	server = new @@HttpServer[map\:map]
+	server.Start[]
+	
+	if (@@GetPlatformType[] == @@PlatformTypeEnum\Console)
+		@@SleepUntilGracefullExit[]
