@@ -1,0 +1,18 @@
+"Y"
+	import @System\Lib\StdView direct meta
+	"m1"
+	"m2"
+	"m3"
+	"t"
+		<@m1 :: "raz">
+			<@m2 :: "raz kotek">
+				<@m3 :: "kotek">
+				"k2"
+			<@m2 :: "raz piesek">
+				<@m3 :: "piesek">
+			<@m3 :: "trzy">			
+		<@m2 :: "dwa">
+			"dwa kotek"
+			"dwa piesek"
+			<@m3 :: "trzy dwa">
+	@@t +< @@VertexToJson :: "kotek"
